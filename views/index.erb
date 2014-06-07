@@ -1,18 +1,19 @@
+<p style="float:right;"><a href='/add'>Add a Transaction</a></p>
 <ul>
 <li><h3>Purchasing Account:</h3>
   <ul>
-    <li><%= @accounts.current_purchasing_balance%></li>
-    <li><%= @accounts.starting_purchasing_balance%></li>
+    <li><%= @purchasing_accounts.current_balance%></li>
+    <li><%= @purchasing_accounts.starting_balance%></li>
   </ul>
 </li>
-    <table>
-    <th>
+    <table style="width:700px;text-align:left;">
+    <tr>
       <td>Date</td>
       <td>Description</td>
       <td>Ammount</td>
       <td>Type</td>
-    </th>
-    <% @accounts.purchasing_transactions.each do |trans| %>
+    </tr>
+    <% @purchasing_accounts.transactions.each do |trans| %>
     <tr>
       <td><%= trans.date%></td>
       <td><%= trans.description%></td>
@@ -23,8 +24,24 @@
     </table>
 <li><h3>Business Checking:</h3>
   <ul>
-    <li><%= @accounts.current_checking_balance%></li>
-    <li><%= @accounts.starting_checking_balance%></li>
+    <li><%= @business_checking.current_balance%></li>
+    <li><%= @business_checking.starting_balance%></li>
   </ul>
 </li>
+    <table style="width:700px;text-align:left;">
+    <tr>
+      <td>Date</td>
+      <td>Description</td>
+      <td>Ammount</td>
+      <td>Type</td>
+    </tr>
+    <% @business_checking.transactions.each do |trans| %>
+    <tr>
+      <td><%= trans.date%></td>
+      <td><%= trans.description%></td>
+      <td><%= trans.amount%></td>
+      <td><%= trans.debit_credit%></td>
+    </tr>
+    <%end%>
+    </table>
 </ul>

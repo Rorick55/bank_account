@@ -4,13 +4,13 @@ class BankTransaction
 
   def initialize(date, amount, description, account)
     @date = date
-    @amount = amount
+    @amount = amount.to_f
     @description = description
     @account = account
   end
 
   def deposit?
-    if @amount.to_i < 0
+    if @amount < 0
       false
     else
       true
@@ -18,7 +18,7 @@ class BankTransaction
   end
 
   def debit_credit
-    if @amount.to_ < 0
+    if @amount < 0
       "WITHDRAWAL"
     else
       "DEPOSIT"
