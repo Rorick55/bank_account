@@ -36,7 +36,6 @@ class BankAccount
     final_transactions
   end
 
-
   def current_balance
     return "Current Balance: $#{self.balances[-1]['Balance'].to_f}"
   end
@@ -54,16 +53,8 @@ class BankAccount
       file << ["#{@account}", "#{new_balance}"]
     end
   end
-
-
-
 end
 
-my_bank_account = BankAccount.new('balances.csv', 'bank_data.csv', 'Purchasing Account')
-
-p my_bank_account.transactions
-
-p my_bank_account.current_balance
 
 
 
